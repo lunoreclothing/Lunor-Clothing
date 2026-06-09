@@ -1,119 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lunoré Clothing</title>
+<button class="cart-btn" onclick="addCart()">
+Add To Cart
+</button>
 
-<style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#111;
-    color:white;
-    text-align:center;
-}
+<p id="cartmsg" style="margin-top:15px;"></p>
+<div style="margin:20px 0;">
 
-.container{
-    max-width:500px;
-    margin:auto;
-    padding:20px;
-}
+<p>Select Quantity</p><br>
 
-.product-img{
-    width:100%;
-    border-radius:15px;
-}
+<select style="
+padding:10px;
+border-radius:8px;
+background:#222;
+color:white;
+border:none;
+width:120px;">
 
-h1{
-    margin-top:15px;
-}
-
-.price{
-    color:#00ff88;
-    font-size:32px;
-    font-weight:bold;
-}
-
-select{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:none;
-    border-radius:8px;
-}
-
-.btn{
-    display:block;
-    width:100%;
-    padding:15px;
-    margin-top:12px;
-    background:#00ff88;
-    color:black;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:10px;
-}
-
-.info{
-    margin-top:20px;
-    color:#ccc;
-}
-
-.instagram{
-    background:#E1306C;
-    color:white;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<img src="https://via.placeholder.com/500x600.png?text=The+Boys+Special+Edition"
-class="product-img">
-
-<h1>The Boys Special Edition</h1>
-
-<div class="price">₹699</div>
-
-<h3>Select Size</h3>
-
-<select>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
-
-<h3>Quantity</h3>
-
-<select>
 <option>1</option>
 <option>2</option>
 <option>3</option>
 <option>4</option>
+
 </select>
 
-<p><b>UPI ID:</b> 8720073628-2@ybl</p>
+</div>
+
+<p style="
+color:#d4af37;
+font-weight:600;
+margin:15px 0;">
+UPI ID: 8720073628-2@ybl
+</p>
 
 <a href="upi://pay?pa=8720073628-2@ybl&pn=LunoreClothing&am=699"
-class="btn">Pay ₹699 Now</a>
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSdeyVts25iBNbUwU5VaFpGaDb5rboMWPJSriRn6SQNKSMShIg/viewform"
-class="btn">Fill Order Form</a>
-
-<div class="info">
-No Return / No Refund<br>
-Delivery Available Across India
-</div>
-
-<a href="https://instagram.com/lunore.clothing"
-class="btn instagram">
-Instagram @lunore.clothing
+class="btn">
+Pay ₹699 Now
 </a>
 
-</div>
+<br><br>
 
-</body>
-</html>
+<p style="color:#ccc;">
+Complete payment first, then fill the order form.
+</p>
+
+<br>
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdeyVts25iBNbUwU5VaFpGaDb5rboMWPJSriRn6SQNKSMShIg/viewform"
+class="btn"
+target="_blank">
+Fill Order Form
+</a>
+
+<br><br>
+
+<p style="font-size:14px;color:#999;">
+No Return / No Refund<br>
+Delivery Available Across India
+</p><script>
+
+function addCart(){
+document.getElementById("cartmsg").innerHTML =
+"✓ Product added to cart";
+}
+
+</script><script>
+
+// Size Selection Highlight
+
+const sizeButtons =
+document.querySelectorAll('.size-box button');
+
+sizeButtons.forEach(button => {
+
+button.addEventListener('click', () => {
+
+sizeButtons.forEach(btn => {
+btn.style.background = '#222';
+btn.style.color = 'white';
+});
+
+button.style.background = '#d4af37';
+button.style.color = 'black';
+
+});
+
+});
+
+</script>.cart-btn{
+padding:16px 34px;
+background:#d4af37;
+border:none;
+font-size:1rem;
+font-weight:600;
+border-radius:40px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 25px rgba(212,175,55,.25);
+}
+
+.cart-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 30px rgba(212,175,55,.45);
+}
